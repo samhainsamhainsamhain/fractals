@@ -2,13 +2,32 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(128, 128, 128);
 }
 
 #fractalsCanvas {
-  background: yellow;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+#controls {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+#sliders {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.slider {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

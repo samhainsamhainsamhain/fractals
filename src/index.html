@@ -9,7 +9,38 @@
   </head>
   <body>
     <canvas id="fractalsCanvas"></canvas>
-
+    <div id="controls">
+      <button id="btn_singleRandomize">Randomize Fractal</button>
+      <div id="sliders">
+        <div class="slider">
+          <label for="direction">Branches Direction</label>
+          <input
+            id="direction"
+            type="range"
+            min="0.5"
+            max="2.5"
+            value="1"
+            step="0.01"
+          />
+        </div>
+        <div class="slider">
+          <label for="color">Branches Color</label>
+          <input id="color" type="range" min="0" max="360" value="0" step="5" />
+        </div>
+        <div class="slider">
+          <label for="sides">Branches Sides</label>
+          <input id="sides" type="range" min="1" max="9" value="1" step="1" />
+        </div>
+        <div class="slider">
+          <label for="depth">Branches Depth</label>
+          <input id="depth" type="range" min="2" max="7" value="2" step="1" />
+        </div>
+      </div>
+      <div class="autoSliders">
+        <label for="autoDirection">Animate Direction</label>
+        <input id="autoDirection" type="checkbox" />
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
