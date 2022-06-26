@@ -17,9 +17,9 @@
           <input
             id="direction"
             type="range"
-            min="0.5"
+            min="-2.5"
             max="2.5"
-            value="1"
+            value="0"
             step="0.01"
           />
         </div>
@@ -29,16 +29,23 @@
         </div>
         <div class="slider">
           <label for="sides">Branches Sides</label>
-          <input id="sides" type="range" min="1" max="9" value="1" step="1" />
+          <input id="sides" type="range" min="1" max="29" value="1" step="1" />
         </div>
         <div class="slider">
           <label for="depth">Branches Depth</label>
           <input id="depth" type="range" min="2" max="7" value="2" step="1" />
         </div>
-      </div>
-      <div class="autoSliders">
-        <label for="autoDirection">Animate Direction</label>
-        <input id="autoDirection" type="checkbox" />
+        <div class="slider">
+          <label for="size">Branches Size</label>
+          <input
+            id="size"
+            type="range"
+            min="50"
+            max="600"
+            value="200"
+            step="1"
+          />
+        </div>
       </div>
     </div>
     <script src="script.js"></script>

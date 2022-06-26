@@ -12,8 +12,10 @@ window.addEventListener("load", function () {
   ctx.lineWidth = 10;
 
   // fractal settings
-  let size =
+  let canvasSize =
     canvas.width < canvas.height ? canvas.width / 3.5 : canvas.height / 3.5;
+  let size = canvasSize;
+
   let shrink = 0.5;
   let branches = 2;
   let sides = 8;
@@ -22,6 +24,7 @@ window.addEventListener("load", function () {
   let directionOfBranch;
   let color;
 
+  // fractal drawing
   function drawBranch(depth) {
     if (depth > maxDepth) {
       return;
@@ -70,19 +73,18 @@ window.addEventListener("load", function () {
     maxDepth = (Math.random() * 4 + 3).toFixed();
     directionOfBranch = Math.random() * 2.3 + 0.7;
     color = Math.random() * 360;
-    drawFractal();
   }
 
-  randomizeFractal();
-
-  // controls
-
+  // CONTROLS
+  // buttons
   const singleRandomizeButton = document.getElementById("btn_singleRandomize");
   singleRandomizeButton.addEventListener("click", function () {
     randomizeFractal();
+    drawFractal();
     updateSliders();
   });
 
+  // sliders
   const directionSlider = this.document.getElementById("direction");
   directionSlider.addEventListener("change", function (event) {
     directionOfBranch = +event.target.value;
@@ -104,6 +106,11 @@ window.addEventListener("load", function () {
     maxDepth = +event.target.value;
     drawFractal();
   });
+  const sizeSlider = this.document.getElementById("size");
+  sizeSlider.addEventListener("change", function (event) {
+    size = +event.target.value;
+    drawFractal();
+  });
 
   function updateSliders() {
     colorSlider.value = color;
@@ -111,4 +118,9 @@ window.addEventListener("load", function () {
     sidesSlider.value = sides;
     directionSlider.value = directionOfBranch;
   }
+
+  // init
+  randomizeFractal();
+  drawFractal();
+  updateSliders();
 });
